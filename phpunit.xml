@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" 
+    bootstrap="vendor/autoload.php" 
+    backupGlobals="false" 
+    backupStaticAttributes="false" 
+    colors="true" 
+    verbose="true" 
+    convertErrorsToExceptions="true" 
+    convertNoticesToExceptions="false" 
+    convertWarningsToExceptions="false" 
+    processIsolation="false" 
+    stopOnFailure="false" 
+    beStrictAboutChangesToGlobalState="true" 
+    beStrictAboutOutputDuringTests="true" 
+    executionOrder="random">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/</directory>
+      <directory suffix=".php">system/</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="Mini ERP Teste_Montink">
+      <directory>tests/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
