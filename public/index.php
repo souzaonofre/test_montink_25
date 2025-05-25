@@ -25,7 +25,7 @@ const APP_ROUTES = 'app-routes';
 const APP_CONFIG = 'app-config';
 
 // App instance
-$app = (new Application(BASE_DIR))
+$app = (new Application(BASE_DIR, PUBLIC_DIR, APP_DIR))
     ->set(APP_ROUTES, $routes_data)
     ->set(APP_CONFIG, $config_data)
     ->setRequest(ServerHttpFactory::createRequestFromGlobals())
