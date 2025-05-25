@@ -38,8 +38,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Onofre\\TestMontink25\\System": "system/",
-            "Onofre\\TestMontink25\\App": "src/"
+            "Onofre\\TestMontink25\\System\\": "system/",
+            "Onofre\\TestMontink25\\App\\": "src/"
         }
     },
     "autoload-dev": {
