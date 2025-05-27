@@ -150,7 +150,6 @@ class HttpRequest implements MessageInterface, ServerRequestInterface
         ));
     }
 
-
     private function sanatizeHeaderName($name): string
     {
         if (!is_string($name) || !preg_match('/^[a-zA-Z0-9\'`#$%&*+.^_|~!-]+$/D', $name)) {
@@ -219,6 +218,12 @@ class HttpRequest implements MessageInterface, ServerRequestInterface
         }
     }
 
+    public function withUri(UriInterface $uri, bool $preserveHost = false): ServerRequestInterface
+    {
+        $this->uri = $uri;
+        return $this;
+    }
+
     private function setUri(string $uri): void
     {
         if ($uri instanceof UriInterface) {
@@ -235,5 +240,32 @@ class HttpRequest implements MessageInterface, ServerRequestInterface
             '"%s" is not valid URI.',
             (is_object($uri) ? get_class($uri) : gettype($uri))
         ));
+    }
+
+    public function getUri(): UriInterface
+    {
+        return $this->uri;
+    }
+
+    public function getMethod(): string
+    {
+        return $this->method;
+    }
+
+    public function withMethod(string $method): ServerRequestInterface
+    {
+        $this->method = $method;
+        return $this;
+    }
+
+    public function getRequestTarget(): string
+    {
+        return $this->requestTarget;
+    }
+
+    public function withRequestTarget(string $requestTarget): ServerRequestInterface
+    {
+        $this->requestTarget = $requestTarget;
+        return $this;
     }
 }
