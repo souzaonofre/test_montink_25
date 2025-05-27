@@ -15,6 +15,8 @@ use Psr\Http\Message\ServerRequestInterface;
 class HttpRequest implements MessageInterface, ServerRequestInterface
 {
 
+    use MessageTrait;
+
     /**
      * @var string[]
      */
