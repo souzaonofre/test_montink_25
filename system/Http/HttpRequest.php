@@ -15,7 +15,7 @@ use Psr\Http\Message\ServerRequestInterface;
 class HttpRequest implements MessageInterface, ServerRequestInterface
 {
 
-    use MessageTrait;
+    use MessageTrait, ServerRequestTrait;
 
     /**
      * @var string[]
@@ -86,7 +86,6 @@ class HttpRequest implements MessageInterface, ServerRequestInterface
      * @var array
      */
     private array $uploadedFiles = [];
-
 
 
     public function __construct(
